@@ -1,31 +1,36 @@
 #include <string>
-#include "faculty.h"
+#ifndef FACULTY_H_
+#define FACULTY_H_
 using namespace std;
 
-
-class Student {
+class Faculty {
 private:
 	int id;
-
 public:
 
 	string name;
+	string office;
+	string email;
+	string tele;
 	bool male;
-	Faculty advisor;
-	int getID(){
-		return id;
+	int NewID;
+
+	int GetID();
+	void SetID();
+
+	Faculty(){
+		name = "George Whitworth";
+		id = 0;
+		male = true;
+	}
+
+	Faculty(string n, bool m = true, string o = "n/a", string e = "n/a",
+		string t = "n/a"){
+		name = n; male = m; office = o; email = e; tele = t;
 	}
 
 
-	void Study();
-	void DoHomework();
-	bool Register(string className);
-	bool ChangeAdvisor(string name);
-
-
-	Student(string n, int i, bool m = true) {
-		name = n;
-		id = i;
-		male = m;
-	}
+	void Teach();
+	void Advise();
 };
+#endif
