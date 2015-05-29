@@ -5,24 +5,32 @@ using namespace std;
 
 class Faculty {
 private:
-    int id;
+	int id;
 public:
-    
-    string name;
-    string office;
-    string email;
-    string tele;
-    bool male;
-    int NewID;
-    
-    int GetID();
-    void SetID();
-    
-    Faculty (string n, bool male = true, string office = "n/a", string email = "n/a",
-             string tele = "n/a");
-    
-    
-    void Teach();
-    void Advise();
+
+	string name;
+	string office;
+	string email;
+	string tele;
+	bool male;
+	int NewID;
+
+	int GetID();
+	void SetID();
+
+	Faculty(){
+		name = "George Whitworth";
+		id = 0;
+		male = true;
+	}
+
+	Faculty(string n, bool m = true, string o = "n/a", string e = "n/a",
+		string t = "n/a"){
+		name = n; male = m; office = o; email = e; tele = t;
+	}
+
+
+	void Teach();
+	void Advise();
 };
 #endif
